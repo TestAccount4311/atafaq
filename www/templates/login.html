@@ -1,0 +1,47 @@
+<ion-view view-title="Login">
+  <div class="bar bar-header cust-header">
+      <div class="row header-row">
+          <div class="col col-10">
+<!--               <img class="header-back-btn" src="img/back.png">
+ -->          </div>
+          <div class="col col-33">
+             <img class="header-arab-text" src="img/arab-white.png">
+          </div>
+      </div>
+  </div>
+  <ion-content class="bg-content">
+      <div class="login-main">
+          <div class="login-first animated zoomIn">
+              <img class="login-first-logo" src="img/Logo-1.png">
+          </div>
+          <div class="login-second animated zoomIn">
+              <img class="login-first-arab" src="img/arab.png">
+          </div>
+          <div class="login-third">
+              <div class="row" ng-click="googlepluslogin()">
+                  <div class="col">
+                      <img class="login-third-google" src="img/google.png">
+                  </div>
+              </div>
+              <div class="row"  ng-click="fblogin()">
+                  <div class="col">
+                     <img class="login-third-google" src="img/facebook.png">
+                  </div>
+              </div>
+              <div class="row reg">
+                  <div class="col col-50">
+                      <button class="button login-third-reg" ui-sref="signup">
+                       REGISTER
+                      </button>
+                  </div>
+                  <div class="col col-50">
+                      <button class="button login-third-reg" ui-sref="loginfnc">
+                        LOGIN
+                      </button>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </ion-content>
+</ion-view>

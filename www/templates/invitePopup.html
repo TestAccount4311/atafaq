@@ -1,0 +1,81 @@
+<ion-view>
+    <ion-header-bar style="background-color:lightgrey">
+        <h1 class="title">Invite A Friend</h1>
+        <div class="buttons">
+            <button class="button" style="background:none;" ng-click="closeInvitePopup()">X</button>
+        </div>
+    </ion-header-bar>
+
+    <ion-content>
+        <ion-list>
+            <ion-item style="height:60px;">
+                <div class="row" ng-click="inviteViaMessage('I like to invite you to use the app from playstore','')">
+                    <div class="col col-10 text-left">
+                        <img src="img/popup-message.png" class="image-popup-invite" style="height:20px;width:20px;">
+                    </div>
+                    <div class="col col-75 text-left">
+                        <h2 class="text-left">Message</h2>
+                    </div>
+                    <div class="col col-10 ">
+                       <i class="icon ion-chevron-right popup-invite-arrow-btn"></i>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item style="height:60px;">
+                <div class="row" ng-click="inviteViaMail('I like to invite you to use the app from playstore', 'Invitation', '', '', '', '')">
+                    <div class="col col-10 text-left">
+                        <img src="img/popup-mail.png" class="image-popup-invite" style="height:20px;width:20px;">
+                    </div>
+                    <div class="col col-75 text-left">
+                        <h2 class="text-left">Email</h2>
+                    </div>
+                    <div class="col col-10 ">
+                       <i class="icon ion-chevron-right popup-invite-arrow-btn"></i>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item style="height:60px;">
+                <div class="row" ng-click="inviteViaCopylink()">
+                    <div class="col col-10 text-left">
+                        <img src="img/popup-copy.png" class="image-popup-invite" style="height:20px;width:20px;">
+                    </div>
+                    <div class="col col-75 text-left">
+                        <h2 class="text-left">Copy Link</h2>
+                    </div>
+                    <div class="col col-10 ">
+                       <i class="icon ion-chevron-right popup-invite-arrow-btn"></i>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item style="height:60px;">
+                <div class="row" ng-click="inviteViaSocialShare('I like to invite you to use the app from playstore','Invitation','','')">
+                    <div class="col col-10 text-left">
+                        <img src="img/popup-vertical-dot.png" class="image-popup-invite" style="height:20px;width:20px;">
+                    </div>
+                    <div class="col col-75 text-left">
+                        <h2 class="text-left">More</h2>
+                    </div>
+                    <div class="col col-10 ">
+                       <i class="icon ion-chevron-right popup-invite-arrow-btn"></i>
+                    </div>
+                </div>
+            </ion-item>
+
+        </ion-list>
+
+    </ion-content>
+</ion-view>
+
+<style>
+    .popup {
+        height: 282px;
+    }
+    .image-popup-invite{
+        position: relative;
+        left: -10px;
+    }
+    .popup-invite-arrow-btn{
+        position: relative;
+        right: -21px;
+    }
+</style>

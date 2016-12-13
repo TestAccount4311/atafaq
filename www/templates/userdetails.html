@@ -1,0 +1,114 @@
+<ion-view view-title="User">
+  <div class="bar bar-header cust-header">
+      <div class="row header-row">
+          <div class="col col-10" ng-click="back()">
+              <img class="header-back-btn" src="img/back.png">
+          </div>
+          <div class="col col-33">
+             <img class="header-arab-text" src="img/arab-white.png">
+          </div>
+      </div>
+  </div>
+  <ion-content class="bg-content content">
+      <div class="list" ui-sref="userdetails">
+          <a class="item item-thumbnail-left user-1" >
+              <img src="img/user.png" style="max-height: 100px !important; max-width: 100px !important;border-radius: 5px;">
+              <p style="font-size: 18px;">Noemi Meredith</p>
+              <span><img src="img/star-orange.png"><img src="img/star-orange.png"> <img src="img/star-orange.png"> <img src="img/star-orange.png"> <img src="img/star-orange.png">  </span>(5)
+              <div class="padding" style="display: -webkit-box;">
+                  <button class="button button-block user-butt button-positive" ><i class="ion-person-stalker" style="color: #02A97E !important;padding-right: 5px;"></i>Follow</button>
+                  <button class="button button-block user-butt button-positive" style="margin-left: 20px !important;"><i class="ion-flag"  style="padding-right: 5px;"></i>Report</button>
+              </div>
+          </a>
+      </div>
+      <div class="row user-row">
+          <div class="col col-33 user-col user-col-2" ng-click="userdeatilspage(1)" ng-class="{'user-activebtn1' : userbutchoose == 1}">
+              <p class="ion-person user-p"></p>
+              <p class="user-p">About</p>
+          </div>
+          <div class="col col-33 user-col" ng-click="userdeatilspage(2)" ng-class="{'user-activebtn2' : userbutchoose == 2}">
+              <p class="user-p">12</p>
+              <p class="user-p">Offers</p>
+          </div>
+          <div class="col col-33 user-col user-col-3" ng-click="userdeatilspage(3)" ng-class="{'user-activebtn3' : userbutchoose == 3}">
+              <p class="user-p">532</p>
+              <p class="user-p">Followers</p>
+          </div>
+      </div>
+      <div ng-if="userbutchoose==1">
+          <p style="margin: 15px 5px 0px 15px;">Member Since January, 2016</p>
+          <h4 style="padding-left: 15px">Houston,TX</h4>
+          <div class="offerinner-one">
+              <img class="offerinner-one-map" src="img/map2.jpg">
+          </div>
+      </div>
+      <div ng-if="userbutchoose==2" style="margin-top: 15px !important;">
+          <div class="mkoffervideo-2">
+              <div class="mkoffervideo-3">
+                  <div class="mkoffervideo-8">
+                      <div class="mkoffervideo-4">
+                          <img src="img/vintage.jpg">
+                      </div>
+                      <p class="mkoffervideo-5"> vintage jewelry Trinket box castket Faux brass 1980s</p>
+                      <p class="mkoffervideo-6">$ 5</p>
+                      <p class="mkoffervideo-7">Houston, TK</p>
+                  </div>
+              </div>
+              <div class="mkoffervideo-3">
+                  <div class="mkoffervideo-8">
+                      <div class="mkoffervideo-4">
+                          <img src="img/christmas.jpg">
+                      </div>
+                      <p class="mkoffervideo-5"> Christmas glass</p>
+                      <p class="mkoffervideo-6">$ 2</p>
+                      <p class="mkoffervideo-7">Houston, TK</p>
+                  </div>
+              </div>
+              <div class="mkoffervideo-3" style=" height: 125px !important;">
+              </div>
+
+
+
+          </div>
+      </div>
+      <div ng-if="userbutchoose==3">
+          <div class="list">
+
+              <a class="item item-thumbnail-left user-2" >
+                  <img src="img/user.png">
+                  <h2>yenny</h2>
+                  <div class="padding user-3" >
+                      <button class="button button-block user-butt button-positive" ><i class="ion-person-stalker" style="padding-right: 5px;color: #02A97E !important;"></i>Follow</button>
+                  </div>
+              </a>
+              <a class="item item-thumbnail-left user-2" >
+                  <img src="img/user.png">
+                  <h2>Penny</h2>
+                  <div class="padding user-3" >
+                      <button class="button button-block user-butt button-positive" ><i class="ion-person-stalker" style="padding-right: 5px;color: #02A97E !important;"></i>Follow</button>
+                  </div>
+              </a>
+              <a class="item item-thumbnail-left user-2" >
+                  <img src="img/user.png">
+                  <h2>cenny</h2>
+                  <div class="padding user-3" >
+                      <button class="button button-block user-butt button-positive" ><i class="ion-person-stalker" style="padding-right: 5px;color: #02A97E !important;"></i>Follow</button>
+                  </div>
+              </a>
+              <a class="item item-thumbnail-left user-2" >
+                  <img src="img/user.png">
+                  <h2>yemmy</h2>
+                  <div class="padding user-3" >
+                      <button class="button button-block user-butt button-positive" ><i class="ion-person-stalker" style="padding-right: 5px;color: #02A97E !important;"></i>Follow</button>
+                  </div>
+              </a>
+
+          </div>
+      </div>
+  </ion-content>
+</ion-view>
+
+
+<style>
+
+</style>

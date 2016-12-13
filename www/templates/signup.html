@@ -1,0 +1,70 @@
+<ion-view view-title="Register">
+  <div class="bar bar-header cust-header">
+      <div class="row header-row">
+          <div class="col col-10" ng-click="back()">
+              <img class="header-back-btn" src="img/back.png">
+          </div>
+          <div class="col col-33">
+             <img class="header-arab-text" src="img/arab-white.png">
+          </div>
+      </div>
+  </div>
+  <ion-content class="bg-content">
+      <div class="login-main">
+          <div class="login-first animated zoomIn">
+              <img class="login-first-logo" src="img/Logo-1.png">
+          </div>
+          <div class="login-second animated zoomIn">
+              <img class="login-first-arab" src="img/arab.png">
+          </div>
+         <div class="signup-third">
+             <div class="list list-inset signup-input-box" ng-class="{'error-input':  signupname==true}">
+                 <label class="item item-input signup-box">
+                     <input type="text" class="signup-third-input" ng-model="signup.name" ng-click="textclick()" placeholder="Name">
+                 </label>
+             </div>
+             <div ng-if="signupname==true" class="error-text">Please enter your name</div>
+            <div class="list list-inset signup-input-box" ng-class="{'error-input':  signupemail==true || signupemail=='invalid' || signupemail=='alreadyExit'}">
+                 <label class="item item-input signup-box">
+                     <input type="text" class="signup-third-input" ng-model="signup.email" ng-click="textclick()" placeholder="Email ID">
+                 </label>
+             </div>
+             <div ng-if="signupemail==true" class="error-text">Please enter your E-mail</div>
+             <div ng-if="signupemail=='invalid'" class="error-text">Invalid E-mail</div>
+             <div ng-if="signupemail=='alreadyExit'" class="error-text">A user is already registered with this E-mail address</div>
+             <div class="list list-inset signup-input-box" ng-if="showhidestatus=='hide'" ng-class="{'error-input':  signuppwd==true || signuppwd=='invalid' || signuppwd=='alreadyExit'}">
+                 <label class="item item-input signup-box">
+                     <input type="password" class="signup-third-input pwd" ng-model="signup.pwd" ng-click="textclick()" placeholder="Password">
+
+                 </label>
+                 <div class="show-span" ng-click="passshowhide('show')">Show</div>
+             </div>
+             <div class="list list-inset signup-input-box" ng-if="showhidestatus=='show'" ng-class="{'error-input':  signuppwd==true || signuppwd=='invalid'}">
+                 <label class="item item-input signup-box">
+                     <input type="text" class="signup-third-input pwd" ng-model="signup.pwd" ng-click="textclick()" placeholder="Password">
+
+                 </label>
+                 <div class="show-span" ng-click="passshowhide('hide')">Hide</div>
+             </div>
+             <div ng-if="signuppwd==true" class="error-text">Please enter your password</div>
+             <div ng-if="signuppwd=='invalid'" class="error-text">Password must be minimum of 6 characters</div>
+             <div class="row signup-reg-btn-row">
+                 <div class="col">
+                     <button class="button login-third-reg" ng-click="gotosignupctrl(signup)">
+                       REGISTER
+                     </button>
+                 </div>
+             </div>
+
+         </div>
+
+      </div>
+  </ion-content>
+</ion-view>
+
+
+<style>
+    .card, .list-inset{
+        margin: 10px 10px !important;
+    }
+</style>

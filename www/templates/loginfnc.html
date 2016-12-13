@@ -1,0 +1,64 @@
+<ion-view view-title="Login">
+  <div class="bar bar-header cust-header">
+      <div class="row header-row">
+          <div class="col col-10" ng-click="back()">
+              <img class="header-back-btn" src="img/back.png">
+          </div>
+          <div class="col col-33">
+             <img class="header-arab-text" src="img/arab-white.png">
+          </div>
+      </div>
+  </div>
+  <ion-content class="bg-content">
+      <div class="login-main">
+          <div class="login-third">
+              <div class="row soc-lgn" ng-click="googlepluslogin()" >
+                  <div class="col">
+                      <img class="login-third-google" src="img/google.png">
+                  </div>
+              </div>
+              <div class="row soc-lgn" ng-click="fblogin()">
+                  <div class="col">
+                     <img class="login-third-google" src="img/facebook.png">
+                  </div>
+              </div>
+              <div class="or">
+                <p class="or-break">or</p>
+              </div>
+              <div class="list list-inset signup-input-box loginfnc-authentication" ng-class="{'error-input':  logstatus==true|| logstatus=='invalid'}">
+                 <label class="item item-input signup-box" >
+                     <input type="text" class="signup-third-input" ng-model="user.email" placeholder="Email ID" id="email" ng-click="textclick()">
+                 </label>
+              </div>
+               <div ng-if="logstatus==true" class="error-text">Please enter your E-mail</div>
+               <div ng-if="logstatus=='invalid'" class="error-text">Invalid E-mail</div>
+               <div class="list list-inset signup-input-box loginfnc-authentication" ng-if="showhidestatus=='hide'" ng-class="{'error-input':passstatus==true|| passstatus=='min'}">
+                 <label class="item item-input signup-box" >
+                     <input type="password" class="signup-third-input pwd" placeholder="Password" ng-model="user.pass" id="pass" ng-click="textclick()">
+                 </label>
+                   <div class="show-span" ng-click="passshowhide('show')">Show</div>
+             </div>
+              <div class="list list-inset signup-input-box loginfnc-authentication" ng-if="showhidestatus=='show'" ng-class="{'error-input':passstatus==true|| passstatus=='min'}">
+                  <label class="item item-input signup-box" >
+                      <input type="text" class="signup-third-input pwd" placeholder="Password" ng-model="user.pass" id="pass" ng-click="textclick()">
+                  </label>
+                  <div class="show-span" ng-click="passshowhide('hide')">Hide</div>
+              </div>
+              <div ng-if="passstatus==true" class="error-text">Please enter your password</div>
+              <div ng-if="passstatus=='min'" class="error-text">Password must be minimum 6 characters</div>
+             <div class="agree-terms">
+                <p class="agree-terms-para">By clicking on 'Sign In' or 'Connecting Using Facebook' you agree to the Atafaq <b>Terms of Service</b> and <b>Privacy Policy</b>.</p>
+             </div>
+              <div class="reg">
+                <div class="padding post-button">
+                    <button class="button button-block post-button button-positive" ng-click="signIn(user)">Sign In</button>
+                </div>
+              </div>
+              <div class="frgt-psswrd">
+                <p class="frgt-psswrd-para" ui-sref="forgotpass">Forgot Password?</p>
+              </div>
+          </div>
+
+      </div>
+  </ion-content>
+</ion-view>

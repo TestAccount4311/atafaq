@@ -1,0 +1,126 @@
+<ion-view view-title="">
+  <div class="bar bar-header cust-header">
+      <div class="row header-row">
+          <div class="col col-10" ng-click="back()">
+              <img class="header-back-btn" src="img/back.png">
+          </div>
+          <div class="col col-33">
+             <img class="header-arab-text" src="img/arab-white.png">
+          </div>
+      </div>
+  </div>
+<ion-content class="post-ion-content has-footer">
+<h3 class="post-head">Describe</h3>
+<div class="list">
+	<label class="item item-input item-select select-post-label" ng-class="{'error-input': postcat==true}">
+		<select class="select-post-category" ng-model="post.category" ng-click="textclick()" ng-options="cat for cat in category">
+		</select>
+	</label>
+    <div ng-if="postcat==true" class="error-text1 " >Category required</div>
+</div>
+    <div class="range-label">
+        <span class="">Condition</span>
+        <span ng-if="post.usedrange <= 16" class="used-label">Other(see description)</span>
+        <span ng-if="post.usedrange >16 && post.usedrange <=32" class="used-label">For Parts</span>
+        <span ng-if="post.usedrange >32 && post.usedrange <=48" class="used-label">Used(normal wear)</span>
+        <span ng-if="post.usedrange >48 && post.usedrange <=65" class="used-label">Open Box(never used)</span>
+        <span ng-if="post.usedrange >65 && post.usedrange <=83" class="used-label">Reconditioned/Certified</span>
+        <span ng-if="post.usedrange >83 && post.usedrange <=100" class="used-label">New(never used)</span>
+    </div>
+    <div class="item range range-sldr">
+        <input type="range" name="volume" ng-model="post.usedrange" >
+    </div>
+<div class="desc-title" style="margin-top: -10px;">Description(optional)</div>
+    <textarea class="post-description" rows="4" cols="50" ng-model="post.description"></textarea>
+    <div class="padding post-button next-button">
+    <button class="button button-block post-button button-positive" ng-click="gotoprice(post)">Next</button>
+ </div>
+</ion-content>
+<style>
+.phot-process {
+	text-align: center;
+    color: #B3B3B3;
+    font-weight: 600;
+    background: url(../img/shaded-dot.png) no-repeat;
+    background-size: 25px 6px;
+    background-position: 56px 15px;
+}
+.phot-process span {
+	display: block;
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    background: #B3B3B3;
+    border-radius: 50%;
+    padding: 3px;
+    color: #fff;
+    font-weight: 500;
+}
+.phot-detail span {
+	display: block;
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    background: #02a97e;
+    border-radius: 50%;
+    padding: 3px;
+    color: #fff;
+    font-weight: 500;
+}
+.phot-price span {
+	display: block;
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    background: #B3B3B3;
+    border-radius: 50%;
+    padding: 3px;
+    color: #fff;
+    font-weight: 500;
+}
+.phot-finish span {
+	display: block;
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    background: #B3B3B3;
+    border-radius: 50%;
+    padding: 3px;
+    color: #fff;
+    font-weight: 500;
+}
+.phot-detail {
+	text-align: center;
+    color: #02a97e;
+    font-weight: 600;
+    background: url(../img/vertical-dot.png) no-repeat;
+    background-size: 25px 6px;
+    background-position: 56px 15px;
+}
+.phot-price {
+	text-align: center;
+    color: #B3B3B3;
+    font-weight: 600;
+    background: url(../img/vertical-dot.png) no-repeat;
+    background-size: 25px 6px;
+    background-position: 56px 15px;
+}
+.phot-finish {
+	text-align: center;
+    color: #B3B3B3;
+    font-weight: 600;
+}
+</style>
+<ion-footer-bar class="cst-footer hide-on-keyboard-open">
+<div class="purchase-prgrss row">
+	<div class="phot-process col col-25"><span class=""><i class = "icon icon ion-checkmark"></i></span>Photo
+	</div>
+	<div class="phot-detail col col-25"><span class="">2</span>Details
+	</div>
+	<div class="phot-price col col-25"><span class="">3</span>Price
+	</div>
+	<div class="phot-finish col col-25"><span class="">4</span>Finish
+	</div>
+</div>
+</ion-footer-bar>
+</ion-view>

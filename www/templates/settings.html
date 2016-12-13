@@ -1,0 +1,177 @@
+<ion-view view-title="">
+  <div class="bar bar-header cust-header">
+      <div class="row header-row">
+          <div class="col col-10" ng-click="back()">
+              <img class="header-back-btn" src="img/back.png">
+          </div>
+          <div class="col col-33">
+             <img class="header-arab-text" src="img/arab-white.png">
+          </div>
+
+      </div>
+  </div>
+<ion-content class="atafaq-content">
+        <div class="setting-1">
+            <div class="seeting-2">
+                <div class="setting-3"  ng-click="opensheet()"><img src="img/cam.png" class="camimg" ng-if="user.image=='undefined' || user.image==''"> <img src="{{user.image}}" class="profimg" ng-if="user.image!='undefined' && user.image!=''"></div>
+            </div>
+            <div class="setting-5">
+            <p>{{logpersondetails.userName}}</p>
+            <span><img src="img/star.png"><img src="img/star.png"> <img src="img/star.png"> <img src="img/star.png"> <img src="img/star.png">  </span>
+            <p>Ratings</p>
+            </div>
+        </div>
+        <div class="setting-4">
+            <label class="setting-lable">NAME</label>
+            <input type="text" placeholder="Enter Your Name" ng-model="user.name" id="name" ng-blur="checkempty('name',user.name)" >
+            <span class="setting-span-1" ng-click="edit('name')">Edit</span>
+        </div>
+        <div class="setting-4">
+            <label class="setting-lable">EMAIL</label>
+            <input type="text" placeholder="Enter Your Email" ng-model="user.email" id="email" ng-blur="checkempty('email',user.email)" ng-click="textclick()" ng-class="{'error-input': settingsemail=='invalid' || settingsemail=='alreadyExit'}">
+            <span class="setting-span-1" ng-click="edit('email')">Edit</span>
+        </div>
+        <div ng-if="settingsemail=='invalid'" class="error-text1">Invalid E-mail</div>
+        <div ng-if="settingsemail=='alreadyExit'" class="error-text1">A user is already registered with this E-mail address</div>
+        <div class="setting-4">
+            <label class="setting-lable">PHONE NO</label>
+            <input type="number" placeholder="Enter Your Phone No" ng-blur="checkempty('phoneno',user.phoneno)" ng-model="user.phoneno" id="phoneno">
+            <span class="setting-span-1" ng-click="edit('phoneno')">Edit</span>
+        </div>
+        <div class="setting-4">
+            <label class="setting-lable">LOCATION</label>
+            <input type="text" placeholder="Enter a location" name="cityname" ng-model="user.location" value="cityname" ng-blur="checkempty('location',user.location)" googleplace="" ng-class="{'error-input': settingslocation==true}"  id="location">
+            <span class="setting-span-1" ng-click="edit('location')">Edit</span>
+        </div>
+        <div ng-if="settingslocation==true" class="error-text1">Select your location</div>
+        <div class="setting-4">
+            <label class="setting-lable">PASSWORD</label>
+            <input type="password" placeholder="Change Password" ng-model="user.password" id="password" ng-blur="checkempty('password',user.password)" ng-click="textclick()" ng-class="{'error-input': settingspwd=='invalid'}">
+            <span class="setting-span-1" ng-click="edit('password')">Edit</span>
+        </div>
+    <!--<input type="text" name="cityname" ng-model="trader.cityname" value="cityname" ng-blur="paymentMethod(trader)" googleplace="" placeholder="New Delhi,India">-->
+        <div ng-if="settingspwd=='invalid'" class="error-text1">Password must be minimum of 6 characters</div>
+    <div class="padding setting-button">
+        <button class="button button-block setting-1-button button-positive" ng-click="updateprofile(user)">Save</button>
+    </div>
+</ion-content>
+</ion-view>
+       <style>
+           .setting-lable
+           {
+               margin-left: 10px;
+               color: #949494;
+           }
+           .setting-4
+           {
+               width: 100%;
+               margin-top: 20px;
+           }
+           .setting-4 input[type="text"]
+           {
+               width: 100%;
+               height: 57px;
+               margin-top: 2px;
+               padding: 10px;
+               font-size: 15px;
+               border: 1px solid rgba(128, 128, 128, 0.32);
+           }
+           .setting-4 input[type="password"]
+           {
+               width: 100%;
+               height: 57px;
+               margin-top: 2px;
+               padding: 10px;
+               font-size: 15px;
+               border: 1px solid rgba(128, 128, 128, 0.32);
+           }
+           .setting-4 input[type="number"]
+           {
+               width: 100%;
+               height: 57px;
+               margin-top: 2px;
+               padding: 10px;
+               font-size: 15px;
+               border: 1px solid rgba(128, 128, 128, 0.32);
+           }
+           .setting-1{
+           width: 100%;
+           height: 300px;
+           background-color: gray;
+
+           }
+           .seeting-2
+           {
+               position: absolute;
+               width: 100%;
+               margin-top: 50px;
+           }
+           .profimg
+           {
+               width: 100%;
+               border-radius: 50%;
+               height: 100%;
+           }
+           .setting-3
+           {
+               width: 100px;
+               height: 100px;
+               margin: auto;
+               border-radius: 50%;
+               background-color: #00AB80;
+               border: 3px solid #80D5C0;
+           }
+           .atafaq-content
+           {
+               margin-top: 58px;
+               background-color: #ECECEC;
+           }
+           .setting-5{
+               color: #DEDEDE;
+               font-size: 15px;
+               width: 100%;
+               text-align: center;
+               position: absolute;
+               margin-top: 170px;
+           }
+           .setting-span-1
+           {
+               position: absolute;
+               text-align: right;
+               width: 100%;
+               margin-top: -32px;
+               padding-right: 10px;
+               color: #d0d0d0;
+           }
+           .setting-button
+           {
+               height: 60px;
+               width: 95%;
+               padding: 0px;
+               margin: 20% auto;
+               font-size: 1.2em;
+               font-weight: 400;
+           }
+           .setting-1-button
+           {
+               line-height: 60px;
+               background-color: #02A97E !important;
+           }
+           .setting-9
+           {
+               position: absolute;
+               width: 100%;
+               height: 300px;
+           }
+           .setting-9 img
+           {
+               width: 100%;
+               height: 100%;
+           }
+           .camimg
+           {
+               width: 50px;
+               margin: 27px 22px 27px 22px;
+           }
+
+       </style>

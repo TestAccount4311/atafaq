@@ -1,0 +1,143 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="cust-header">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left" >
+        <div class="row header-row" ng-show="showmenuheader">  <!-- ng-show="showmenuheader" -->
+              <div class="col col-10" menu-toggle="left">
+                  <img class="side-toggle-btn" src="img/sidemenu.png">
+              </div>
+              <div class="col col-33">
+                 <img class="header-arab-text" src="img/arab-white.png">
+              </div>
+              <div class="col col-10">
+
+              </div>
+              <div class="col col-10">
+
+              </div>
+              <div class="col col-10 side-btn">
+                <img class="side-toggle-btn" src="img/search.png">
+              </div>
+              <div class="col col-10" ui-sref="photo">
+                 <img class="side-toggle-btn" src="img/cam.png">
+              </div>
+              <div class="col col-10">
+                  <img class="side-toggle-btn" src="img/invite2.png" ng-click="showInvitation()">
+              </div>
+              <div class="col col-10">
+                <img class="dot" src="img/dot.png">
+              </div>
+        </div>
+          <!--<div class="row header-row  cust-header" n>-->
+                  <!--<div class="col col-10" ng-click="back()">-->
+                       <!--<img class="header-back-btn" src="img/back.png">-->
+                  <!--</div>-->
+                  <!--<div class="col col-33">-->
+                      <!--<img class="header-arab-text" src="img/arab-white.png">-->
+                 <!--</div>-->
+         <!--</div>-->
+
+
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" width="myWidthValue + 200">
+    <ion-content class="">
+      <div class="cust-menu">
+        <div class="row side-menu-first">
+            <div class="col col-33  side-menu-first-col">
+                <img class="side-menu-first-user" src="img/user.png" ng-if="logpersondetails.image=='undefined' || logpersondetails.image==''">
+                <img class="side-menu-first-user" src="{{logpersondetails.image}}"  ng-if="logpersondetails.image!='undefined' && logpersondetails.image!=''">
+            </div>
+            <div class="col side-menu-first-col">
+              <p class="sidemenu-username">{{logpersondetails.userName}}</p>
+            </div>
+            <div class="col col-20 side-menu-first-col menu-close" ui-sref="settings">
+              <img class="side-menu-first-settings" src="img/settings.png">
+            </div>
+        </div>
+        <div class="row menu-close">
+          <div class="col" ui-sref="photo">
+            <button class="button  sidemenu-btn">
+              <img class="sidemenu-cam" src="img/cam.png" ui-sref="photo">
+              Post New Offer
+            </button>
+          </div>
+        </div>
+        <div class="row side-menu-icons-row menu-close" ui-sref="app.home"  ng-class="{'menubut' : choosemenubut == 1}">
+            <div class="col col-20 side-menu-icons-col1">
+                <img class="side-menu-icons" src="img/home.png">
+            </div>
+            <div class="col side-menu-icons-col2" >
+              <p class="side-menu-icons-text menu-close" style="color:#02A97E">Home</p>
+            </div>
+        </div>
+        <div class="row side-menu-icons-row " style="background-color: white !important;" ng-class="{'menubut' : choosemenubut == 2}">
+            <div class="col col-20 side-menu-icons-col1">
+                <img class="side-menu-icons menu-close" src="img/cata.png">
+            </div>
+            <div class="col side-menu-icons-col2" menu-close ui-sref="app.category">
+              <p class="side-menu-icons-text">Categories</p>
+            </div>
+        </div>
+        <div class="row side-menu-icons-row " ui-sref="app.alert" style="background-color: white !important;" ng-class="{'menubut' : choosemenubut == 3}">
+            <div class="col col-20 side-menu-icons-col1">
+                <img class="side-menu-icons" src="img/alert.png">
+            </div>
+            <div class="col side-menu-icons-col2"  >
+              <p class="side-menu-icons-text menu-close">Alerts</p>
+            </div>
+        </div>
+        <div class="row side-menu-icons-row " ui-sref="app.myoffers" style="background-color: white !important;" ng-class="{'menubut' : choosemenubut == 4}">
+            <div class="col col-20 side-menu-icons-col1">
+                <img class="side-menu-icons" src="img/myoffer.png">
+            </div>
+            <div class="col side-menu-icons-col2">
+            <!--<div class="col side-menu-icons-col2" ui-sref="app.photo"> ng-click="gotomyoffer()"-->
+              <p class="side-menu-icons-text menu-close">My Offers</p>
+            </div>
+        </div>
+        <div class="row side-menu-icons-row menu-close" style="background-color: white !important;" ng-class="{'menubut' : choosemenubut == 5}">
+            <div class="col col-20 side-menu-icons-col1">
+                <img class="side-menu-icons" src="img/help.png">
+            </div>
+            <div class="col side-menu-icons-col2">
+              <p class="side-menu-icons-text">Help Center</p>
+            </div>
+        </div>
+          <div class="row side-menu-icons-row menu-close" ng-click="logout()" style="background-color: white !important;" ng-class="{'menubut' : choosemenubut == 5}">
+              <div class="col col-20 side-menu-icons-col1">
+                  <img class="side-menu-icons" src="img/logout.png">
+              </div>
+              <div class="col side-menu-icons-col2">
+                  <p class="side-menu-icons-text">Logout</p>
+              </div>
+          </div>
+      </div>
+      <div class="side-menu-icons-row row invite" >
+        <div class="col col-20 side-menu-icons-col1" >
+          <img class="side-menu-icons" src="img/invite.png">
+        </div>
+        <div class="col side-menu-icons-col2" ng-click="showInvitation()">
+          <p class="side-menu-icons-text">Invite a Friend</p>
+        </div>
+      </div>
+
+    </ion-content>
+
+  </ion-side-menu>
+</ion-side-menus>
+
+<style>
+  .wid{
+    max-width: 28.33px;
+  }
+/*  .has-header {
+    top: 85px !important;
+  }*/
+</style>

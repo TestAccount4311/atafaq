@@ -1,0 +1,35 @@
+<ion-view view-title="location">
+  <div class="bar bar-header cust-header">
+      <div class="row header-row">
+          <div class="col col-10" ng-click="back()">
+              <img class="header-back-btn" src="img/back.png">
+          </div>
+          <div class="col col-33">
+             <img class="header-arab-text" src="img/arab-white.png">
+          </div>
+      </div>
+  </div>
+  <ion-content class="bg-content content location-content">
+        <div class="location-main">
+            <div class="location-one animated zoomIn">
+                <img class="location-one-image" src="img/getloc.png">
+            </div>
+        </div>
+      <div class="row location-two">
+          <div class="col animated zoomIn">
+              <button class="button login-third-reg"  ui-sref="finish">
+                 Save
+              </button>
+          </div>
+      </div>
+  </ion-content>
+</ion-view>
+
+
+<style>
+    .location-content{
+        background-image: url("img/map.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>

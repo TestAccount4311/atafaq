@@ -1,0 +1,78 @@
+<ion-view >
+    <div class="search-form search-from-boder slide-search6" style="display: none">
+        <div class="list list-inset search-from-boder">
+            <label class="item item-input search-from-boder">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Search">
+            </label>
+        </div>
+
+        <div class="list list-inset search-from-boder">
+            <label class="item item-input search-from-boder">
+                <i class="icon ion-ios-location placeholder-icon"></i>
+                <input type="text" placeholder="Place" style="border-right: 1px solid gainsboro;">
+                    <span class="search-from4"><select >
+                        <option>30 Miles</option>
+                        <option selected>20 Miles</option>
+                        <option>10 Miles</option>
+                    </select></span>
+            </label>
+
+        </div>
+        <div class="search-from6">
+        </div>
+        <div class="search-from1 search-from-boder">
+            <label class="search-lable ">Price Range</label>
+            <select class="search-from-boder">
+                <option>Newest</option>
+                <option selected>Oldest</option>
+            </select>
+        </div>
+        <div class="search-from1 search-from-boder">
+            <label class="search-lable " >Sort by</label>
+            <div class="row search-from2" style="padding: 0px;">
+                <div class="col" style="padding: 0px;">
+                    <input type="text" placeholder="Min">
+                </div>
+                <div class="col" style="padding: 0px;">
+                    <input type="text" placeholder="Max">
+                </div>
+            </div>
+        </div>
+
+        <div class="padding search-button">
+            <button class="button button-block search-1-button button-positive" ui-sref="details">Search</button>
+        </div>
+    </div>
+    <div class="search-backdrop" style="display: none"></div>
+   <ion-content class="search-ion-content">
+      <div class="alert-1">
+              <div class="alert-2"><i class="ion-ios-bell alert-3"></i></div>
+              <h3>You have no nofications</h3>
+              <p>This is where you'll see notification about new message and other important information </p>
+      </div>
+   </ion-content>
+</ion-view>
+<style>
+    .alert-1{
+    margin: 50% auto;
+    height: 100%;
+    width: 95%;
+    }
+     .alert-2
+     {
+         width: 100px;
+         height: 100px;
+         margin: auto;
+         font-size: 50px;
+         color: #00BF8E;
+         background-color: white;
+         border-radius: 50%;
+         padding-right: 37px;
+     }
+    .alert-3
+    {
+        position: absolute;
+        top: 25px;
+    }
+</style>

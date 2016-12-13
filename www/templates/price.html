@@ -1,0 +1,119 @@
+<ion-view view-title="">
+  <div class="bar bar-header cust-header">
+      <div class="row header-row">
+          <div class="col col-10" ng-click="back()">
+              <img class="header-back-btn" src="img/back.png">
+          </div>
+          <div class="col col-33">
+             <img class="header-arab-text" src="img/arab-white.png">
+          </div>
+      </div>
+  </div>
+<ion-content class="post-ion-content has-footer">
+<h3 class="post-head">Price</h3>
+<div class="prod-rate"  ng-class="{'error-input': postprice==true}">
+    <input type="text" placeholder="$350" ng-model="post.currency" ng-click="textclick()" style="width: 100%;text-align: center;">
+</div>
+    <div ng-if="postprice==true" class="error-text1 " style=" width: 50% !important;">currency required</div>
+<!--<ion-checkbox class="post-checkbox price-checkbox" ng-model="isChecked">Firm price?</ion-checkbox>-->
+    <div class="item item-toggle" style="margin-top: 25px">
+        Firm price?
+        <label class="toggle toggle-assertive">
+            <input type="checkbox" mg-model="post.firmprice">
+            <div class="track">
+                <div class="handle"></div>
+            </div>
+        </label>
+    </div>
+<div class="padding post-button next-button">
+	<button class="button button-block post-button button-positive" ng-click="gotofinish(post)">Post Item</button>
+</div>
+</ion-content>
+<style>
+.phot-process {
+	text-align: center;
+    color: #B3B3B3;
+    font-weight: 600;
+    background: url(../img/shaded-dot.png) no-repeat;
+    background-size: 25px 6px;
+    background-position: 56px 15px;
+}
+.phot-process span {
+	display: block;
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    background: #B3B3B3;
+    border-radius: 50%;
+    padding: 3px;
+    color: #fff;
+    font-weight: 500;
+}
+.phot-detail span {
+	display: block;
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    background: #B3B3B3;
+    border-radius: 50%;
+    padding: 3px;
+    color: #fff;
+    font-weight: 500;
+}
+.phot-price span {
+	display: block;
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    background: #02a97e;
+    border-radius: 50%;
+    padding: 3px;
+    color: #fff;
+    font-weight: 500;
+}
+.phot-finish span {
+	display: block;
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    background: #B3B3B3;
+    border-radius: 50%;
+    padding: 3px;
+    color: #fff;
+    font-weight: 500;
+}
+.phot-detail {
+	text-align: center;
+    color: #B3B3B3;
+    font-weight: 600;
+    background: url(../img/shaded-dot.png) no-repeat;
+    background-size: 25px 6px;
+    background-position: 56px 15px;
+}
+.phot-price {
+	text-align: center;
+    color: #02a97e;
+    font-weight: 600;
+    background: url(../img/vertical-dot.png) no-repeat;
+    background-size: 25px 6px;
+    background-position: 56px 15px;
+}
+.phot-finish {
+	text-align: center;
+    color: #B3B3B3;
+    font-weight: 600;
+}
+</style>
+<ion-footer-bar class="cst-footer hide-on-keyboard-open">
+<div class="purchase-prgrss row">
+	<div class="phot-process col col-25"><span class=""><i class = "icon icon ion-checkmark"></i></span>Photo
+	</div>
+	<div class="phot-detail col col-25"><span class=""><i class = "icon icon ion-checkmark"></i></span>Details
+	</div>
+	<div class="phot-price col col-25"><span class="">3</span>Price
+	</div>
+	<div class="phot-finish col col-25"><span class="">4</span>Finish
+	</div>
+</div>
+</ion-footer-bar>
+</ion-view>
